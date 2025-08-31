@@ -1,0 +1,37 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background: #55555500;
+    color: white;
+  }
+
+  .name{
+    font-size: 14px;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+  }
+
+    .theme-toggle {
+    background: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    color: rgb(232, 232, 232);
+  }
+.links
+    {
+        display: flex;
+        gap: 20px;
+        
+    }
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;   
+  /* border: 2px solid #d1d10b; */
+}
+  
