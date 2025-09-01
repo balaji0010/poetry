@@ -9,6 +9,7 @@
   }
 
   .name{
+    font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 14px;
     font-weight: bold;
     font-variant-caps: all-small-caps;
