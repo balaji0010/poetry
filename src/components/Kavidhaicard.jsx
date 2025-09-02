@@ -25,17 +25,20 @@ const Kavidhaicard = () => {
 
   return (
     <div>
-      <div className="card-grid">
-        {poems.map((poem) => (
-          <div
-            key={poem.id}
-            className="card"
-            onClick={() => setSelectedText(poem.text)}
-          >
-            <p>{poem.text}</p>
-          </div>
-        ))}
-      </div>
+        <div className="card-grid">
+          {poems.map((poem) => (
+            <div
+              key={poem.id}
+              className="card"
+              onClick={() => setSelectedText(poem.text)}
+            >
+              {/* <p>{poem.text}</p> */}
+              <p style={{ whiteSpace: "pre-line" }}>
+  {poem.text}
+</p>
+            </div>
+          ))}
+        </div>
 
       {selectedText && (
         <div className="modal-overlay" onClick={() => setSelectedText(null)}>
@@ -44,7 +47,10 @@ const Kavidhaicard = () => {
             <span className="close" onClick={() => setSelectedText(null)}>
               ✕
             </span>
-            <p>{selectedText}</p>
+            {/* <p>{selectedText}</p> */}
+                          <p style={{ whiteSpace: "pre-line" }}>
+  {selectedText}
+</p>
           </div>
         </div>
       )}
