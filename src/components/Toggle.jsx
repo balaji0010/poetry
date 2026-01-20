@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Sun, Moon } from "lucide-react";
 
-const Toggle =()=>{
+const Toggle = ({ theme, toggleTheme }) => {
 
-    const [darkMode, setDarkMode] = useState(true);
-    return(
+  return (
     <button
       className="theme-toggle"
-      onClick={() => setDarkMode(!darkMode)}
+      onClick={toggleTheme}
     >
-      {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+      {theme === 'dark' ? <Moon size={20} /> : <Sun size={20} />}
     </button>
-    );
+  );
 };
 
 export default Toggle

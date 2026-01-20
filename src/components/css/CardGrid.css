@@ -5,16 +5,36 @@
   margin: 2rem;
 }
 
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 2fr;
+    margin: 1rem;
+    gap: 1.5rem;
+  }
+}
+
 .card {
-  background: #000;
-  border: 1px solid #555;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 10px;
   padding: 30px;
-  color: white;
+  color: var(--text-color);
   height: 200px;
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card p {
@@ -23,9 +43,11 @@
   /* max-height: 170px;   */
   overflow: hidden;
   position: relative;
+  word-wrap: break-word;
+  /* Ensure long words don't overflow */
 }
 
-/* Fade effect for long text */ 
+/* Fade effect for long text */
 .card p::after {
   content: "";
   position: absolute;
@@ -33,7 +55,8 @@
   left: 0;
   /* height: 20px; */
   width: 100%;
-  background: linear-gradient(transparent, black);
+  height: 2rem;
+  background: linear-gradient(var(--fade-gradient-start), var(--fade-gradient-end));
 }
 
 /* Modal overlay */
@@ -43,22 +66,24 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: var(--modal-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 /* Modal box */
 .modal {
-  background: #000;
+  background: var(--modal-bg);
   padding: 2rem;
   border-radius: 10px;
-  color: white;
+  color: var(--text-color);
   max-width: 600px;
   width: 80%;
   position: relative;
-  border: solid 1px #ededed47;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .close {
@@ -67,5 +92,10 @@
   right: 15px;
   cursor: pointer;
   font-size: 20px;
-  color: #ccc;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.close:hover {
+  opacity: 1;
 }

@@ -1,38 +1,87 @@
-
 .navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 20px;
-    background: #55555500;
-    color: white;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background: transparent;
+  color: var(--text-color);
+}
 
-  .name{
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 14px;
-    font-weight: bold;
-    font-variant-caps: all-small-caps;
-  }
+.name {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-variant-caps: all-small-caps;
+}
 
-    .theme-toggle {
-    background: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    color: rgb(232, 232, 232);
-  }
-.links
-    {
-        display: flex;
-        gap: 20px;
-        
-    }
+.theme-toggle {
+  background: var(--toggle-bg);
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--toggle-hover);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+
+}
 
 .profile-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  object-fit: cover;   
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
   /* border: 2px solid #d1d10b; */
 }
-  
+
+.profile-avatar:hover {
+  transform: scale(1.1);
+}
+
+.profile-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.profile-item:hover {
+  background-color: var(--toggle-hover);
+}
